@@ -1,12 +1,12 @@
 # Render Blueprint (infrastructure as code).
 # Services pull the image built by GitHub Actions from GHCR.
-# Replace OWNER/REPO with your GitHub path (lowercase).
+# Replace pritom00/devops-render with your GitHub path (lowercase).
 services:
   - type: web
     name: devops-demo-staging
     runtime: image
     image:
-      url: ghcr.io/OWNER/REPO:latest
+      url: ghcr.io/pritom00/devops-render:latest
     plan: free
     healthCheckPath: /health
     autoDeploy: false          # deploys are triggered by the pipeline, not by Render
@@ -18,7 +18,7 @@ services:
     name: devops-demo-production
     runtime: image
     image:
-      url: ghcr.io/OWNER/REPO:latest
+      url: ghcr.io/pritom00/devops-render:latest
     plan: free
     healthCheckPath: /health
     autoDeploy: false
